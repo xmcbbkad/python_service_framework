@@ -1,0 +1,41 @@
+{
+  "processors": [
+    {
+      "name": "query_processor",
+      "path": "python_service_framework.processors.query_processor.QueryProcessor"
+    },
+    {
+      "name": "selector",
+      "path": "python_service_framework.processors.recall_processor.RecallProcessor",
+      "args": {
+        "es_host": "10.10.11.181:9200",
+        "es_index": "ai51_main_prod"
+      }
+    },
+    {
+      "name": "preranker",
+      "path": "python_service_framework.processors.rank_processor.PreRankProcessor",
+      "args": {}
+    },
+    {
+      "name": "ranker",
+      "path": "python_service_framework.processors.rank_processor.RankProcessor",
+      "args": {
+        "model_path": "model_path",
+        "model_rank_num": "model_rank_num"
+      }
+    },
+    {
+      "name": "postranker",
+      "path": "python_service_framework.processors.rank_processor.PostRankProcessor",
+      "args": {}
+    }
+  ],
+  "input": {
+    "type": "single",
+    "name": "system_input"
+  },
+  "output": {
+    "type": "single"
+  }
+}

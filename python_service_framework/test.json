@@ -1,0 +1,32 @@
+{
+  "processors": [
+    {
+      "name": "processor:test",
+      "path": "python_service_framework.processors.concrect_processor.TestProcessor",
+      "args": {
+        "mongo_conf": {
+          "mongo_url": "mongodb://blue_book_news:blue_book_news_eigen123@dds-bp10da4305cf39f42.mongodb.rds.aliyuncs.com:3717/blue_book_news_dev",
+          "mongo_db": "blue_book_news_dev",
+          "collection": "test_saver0"
+        }
+      }
+    },
+    {
+      "name": "processor:test2",
+      "path": "python_service_framework.processors.concrect_processor.TestProcessor",
+      "args": {}
+    },
+    {
+      "name": "processor:test3",
+      "path": "python_service_framework.processors.concrect_processor.TestProcessor",
+      "args": {}
+    }
+  ],
+  "input": {
+    "type": "list",
+    "name": "system_input"
+  },
+  "output": {
+    "type": "list"
+  }
+}
